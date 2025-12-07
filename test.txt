@@ -1,3 +1,2 @@
-develope/makeを作る
-feature/testを作った
-testコミット
+developeブランチ作った。
+feature/testブランチ作った。
