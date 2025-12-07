@@ -1,2 +1,1 @@
 developeブランチ作った。
-feature/testブランチ作った。
