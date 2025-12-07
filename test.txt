@@ -1,3 +1,2 @@
-developeブランチ作った。
 feature/test作った。
-featureの中で編集。
+feature/test作った。
