@@ -1,0 +1,22 @@
+# .gitignore
+
+# ------------------
+# Unity用の設定
+# ------------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+*.csproj
+*.sln
+
+# ------------------
+# Python用の設定
+# ------------------
+__pycache__/
+*.py[cod]
+venv/
+.python/venv/
+.venv/
+.env
