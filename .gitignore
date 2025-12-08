@@ -1,3 +1,5 @@
+# .gitignore
+
 # ------------------
 # Unity用の設定
 # ------------------
@@ -15,5 +17,6 @@
 __pycache__/
 *.py[cod]
 venv/
+.python/venv/
 .venv/
 .env
