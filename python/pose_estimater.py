@@ -1,4 +1,4 @@
-# pose_estimate.py
+# pose_estimater.py
 
 """
 Mediapipeのモジュール

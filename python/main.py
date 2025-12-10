@@ -6,7 +6,7 @@ input動画に対して骨格推定を行い、output動画として保存する
 
 import cv2
 import os
-from pose_estimate import estimate_pose_frame
+from pose_estimater import estimate_pose_frame
 from config import PATHS
 
 def main():
