@@ -1,5 +1,5 @@
 // UDPReceiver.cs
-// UDPでJSONデータを受信し、最新データを保持する
+// UDPでy座標（str型）を受信し、最新データを保持する
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -12,9 +12,9 @@ public class UDPReceiver : MonoBehaviour
     [Header("UDP受信ポート番号")]
     public int port = 5005;
 
-    // 最新の受信JSONデータ（外部から参照可能）
+    // 最新の受信y座標（文字列、外部から参照可能）
     [NonSerialized]
-    public string latestJson = "";
+    public string latestYString = "";
 
     private UdpClient udpClient;
     private Thread receiveThread;
@@ -39,8 +39,8 @@ public class UDPReceiver : MonoBehaviour
             try
             {
                 byte[] data = udpClient.Receive(ref remoteEP);
-                string json = Encoding.UTF8.GetString(data);
-                latestJson = json;
+                string yStr = Encoding.UTF8.GetString(data);
+                latestYString = yStr;
             }
             catch (Exception e)
             {
