@@ -40,14 +40,10 @@ def main():
 			break
 		# 骨格推定（描画画像とランドマークリストを同時取得）
 		result_frame, landmarks = estimate_pose_and_landmarks(frame)
-		# 右手首（16番）のY座標を取得し、音階インデックスに変換
+		# 右手首（16番）のY座標をUDPでそのまま送信
 		if len(landmarks) > 16:
 			wrist_y = landmarks[16][1]
-			scale_index = y_to_scale_index(wrist_y, height, SCALE_NUM)
-			if scale_index is not None:
-				# UnityへUDP送信
-				# 0から始まる音階インデックス(0,1,2...)を文字列に変換して送信
-				sender.send(str(scale_index))
+			sender.send(str(wrist_y))
 		out.write(result_frame)
 
 	cap.release()
