@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MusicPleyer : MonoBehaviour
+public class MusicPlayer : MonoBehaviour
 {
     [Header("UDP受信")]
     public UDPReceiver udpReceiver;
