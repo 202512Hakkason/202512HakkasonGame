@@ -30,9 +30,18 @@ public class HandVisualizer : MonoBehaviour
 
 		if (float.TryParse(yStr, out float yNorm))
 		{
-			float mappedY = Mathf.Lerp(worldYRange.x, worldYRange.y, Mathf.Clamp01(1-yNorm));
-			targetPosition = new Vector3(fixedX, mappedY, transform.position.z);
-			transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * lerpSpeed);
-		}
-	}
+            // 0〜1 を反転
+            float inverted = 1f - Mathf.Clamp01(yNorm);
+
+
+            float mappedY = Mathf.Lerp(worldYRange.x, worldYRange.y, inverted);
+            targetPosition = new Vector3(fixedX, mappedY, transform.position.z);
+            transform.position = Vector3.Lerp(
+                transform.position,
+                targetPosition,
+                Time.deltaTime * lerpSpeed
+            );
+
+        }
+    }
 }
