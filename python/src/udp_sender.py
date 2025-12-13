@@ -17,6 +17,5 @@ class UDPSender:
 			message (str): 送信するデータ
 		"""
 		self.sock.sendto(message.encode('utf-8'), self.address)
-		# fordebug
+		# pythonのターミナルログにデバッグ用出力
 		print(f"Sent UDP message to {self.address}: {message}")
-
